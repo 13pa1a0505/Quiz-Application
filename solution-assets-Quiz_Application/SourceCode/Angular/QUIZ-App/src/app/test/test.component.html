@@ -1,0 +1,54 @@
+<div class="bgimg">
+  <div class="col-md-18">
+    <form #form="ngForm">
+      <div *ngFor="let question of questions">
+        <label class="font-weight-normal">
+
+          {{question.qid}}.
+        </label>
+        <label class="font-weight-normal">
+          &nbsp;&nbsp;{{question.questions}}
+        </label>
+        <br>
+        <input id="a" type="radio" value="{{question.a}}" name="question" (change)="radioChangedHandler(question.a,question.qid)"
+          required>&nbsp;&nbsp;{{question.a}}
+        <br>
+        <input id="b" type="radio" value="{{question.b}}" name="question" (change)="radioChangedHandler(question.b,question.qid)"
+          required>&nbsp;&nbsp;{{question.b}}
+        <br>
+        <input id="c" type="radio" value="{{question.c}}" name="question" (change)="radioChangedHandler(question.c,question.qid)"
+          required>&nbsp;&nbsp;{{question.c}}
+        <br>
+        <input id="d" type="radio" value="{{question.d}}" name="question" (change)="radioChangedHandler(question.d,question.qid)"
+          required>&nbsp;&nbsp;{{question.d}}
+        <br>
+        <br>
+        <br>
+
+        <p>
+          <span style="color: green;">
+            <b>you selected:</b>
+          </span>
+          <b>&nbsp;&nbsp;{{selectedOption}}</b>
+        </p>
+        <p *ngIf="ss">
+          <span style="color: red;">please select an answer:</span>
+        </p>
+
+
+      </div>
+
+
+
+      <div class="text-center">
+
+        <button class="btn btn-primary" (click)="previous()">Prev</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-primary" (click)="next()">Next</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button *ngIf="status" class="btn btn-primary" (click)="Submit()">Submit</button>
+
+
+      </div>
+
+    </form>
+  </div>
+</div>

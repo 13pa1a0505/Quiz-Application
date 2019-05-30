@@ -1,0 +1,31 @@
+<app-adminprofile></app-adminprofile>
+<div class="bgimg">
+  <div class="col-md-20">
+    <table id="customers" class="table table-striped css-serial">
+      <thead>
+        <tr>
+          <th>S.no</th>
+          <th>U_ID</th>
+          <th>TechnologyName</th>
+          <th>Level</th>
+          <th>Questions-Attempted</th>
+          <th>Questions-Correct</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of results">
+          <td></td>
+          <td>{{result.uID}}</td>
+          <td>{{result.technologyName}}</td>
+          <td>{{result.level}}</td>
+          <td>{{result.qsnsattempted}}</td>
+          <td>{{result.qsnscorrect}}</td>
+          <td>{{result.score}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <input class="btn btn-primary" action="action" onclick="window.history.go(-1); return false;" type="button" value="Back"
+  />
+</div>

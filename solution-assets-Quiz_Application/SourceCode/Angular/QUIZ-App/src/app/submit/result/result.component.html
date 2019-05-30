@@ -1,0 +1,37 @@
+<div class="bgimg">
+  <div class="col-md-18">
+
+    <div *ngFor="let question of questions">
+      <label class="font-weight-normal">
+        {{question.qid}}
+      </label>
+      <label class="font-weight-normal">
+        .{{question.questions}}
+      </label>
+      <br>
+      <label class="font-weight-normal">
+        {{question.a}}
+      </label>
+      <br>
+      <label class="font-weight-normal">
+        {{question.b}}
+      </label>
+      <br>
+      <label class="font-weight-normal">
+        {{question.c}}
+      </label>
+      <br>
+      <label class="font-weight-normal">
+        {{question.d}}
+      </label>
+      <br>
+      <label class="font-weight-normal" style="color:rgb(0, 255, 106);">
+        {{question.correctanswer}}
+      </label>
+      <br>
+
+    </div>
+    <input class="btn btn-primary" action="action" onclick="window.history.go(-1); return false;" type="button" value="Back"
+    />
+  </div>
+</div>

@@ -1,0 +1,12 @@
+Hi,
+
+
+Here are the Login Details:
+
+
+Request Description: ${emailBody}
+
+
+
+Thanks & Regards,
+${regards}

@@ -1,0 +1,10 @@
+Hi ${username},
+
+OOPS!!!
+ This is a FAILURE email...
+
+Here is the content you've entered:
+${emailBody}
+
+Thanks & Regards,
+${regards}

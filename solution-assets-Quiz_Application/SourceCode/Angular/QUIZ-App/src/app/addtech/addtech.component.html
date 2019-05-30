@@ -1,0 +1,42 @@
+<div class="bgimg">
+  <div>
+    <h3>Add Technology</h3>
+    <div [hidden]="submitted" style="width: 400px;">
+      <form #form="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
+
+        <div class="form-group">
+          <label for="t_id">Technology No</label>
+          <input type="text" class="form-control" id="t_id" #tv required [(ngModel)]="Technology.tid" name="t_id" required #fn="ngModel"
+            pattern="\d{4}">
+          <label class="text-danger" *ngIf="fn.touched && (fn.pristine || fn.value=='')">
+            <b>Technology ID required </b>
+          </label>
+          <label class="text-danger" *ngIf="fn.invalid && fn.dirty && fn.value!=''">
+            <b> TechnologyID should be a number</b>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label for="tname">Technology Name</label>
+          <input type="text" class="form-control" id="tname" #tn required [(ngModel)]="Technology.tname" name="tname" required #fn1="ngModel"
+             pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
+          <label class="text-danger" *ngIf="fn1.touched && (fn1.pristine || fn1.value=='')">
+            <b>Technology Name required </b>
+          </label>
+          <label class="text-danger" *ngIf="fn1.invalid && fn1.dirty && fn1.value!=''">
+            <b> Technology Name should be a text</b>
+          </label>
+        </div>
+
+
+      </form>
+    </div>
+
+    <div>
+
+      <button class="btn btn-success" [disabled]="!form.valid" (click)="newtech()">Add</button> &nbsp;&nbsp;
+      <input class="btn btn-primary" action="action" onclick="window.history.go(-1); return false;" type="button" value="Back"
+      />
+    </div>
+  </div>
+</div>

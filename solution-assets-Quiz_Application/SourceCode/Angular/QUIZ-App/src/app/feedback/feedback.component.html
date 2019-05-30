@@ -1,0 +1,56 @@
+<app-userprofile></app-userprofile>
+
+<div class="bgimg5">
+  <form #form="ngForm" (ng-submit)="submit(form)" autocomplete="off">
+    <h1 center>Feedback Form</h1>
+
+
+   
+
+
+    <!-- Rating field -->
+    <div class="form-check form-check-inline">
+      <label for="ratingn">
+        <b>Rating:</b> &nbsp;&nbsp;</label>
+
+      <label class="form-check-label">
+        <input class="form-check-input" type="radio" id="rating" name="rating" value="excellent" [(ngModel)]=Feedback.rating required>
+        <b style="color:rgb(228, 171, 65)">Excellent </b>
+      </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <label class="form-check-label">
+        <input class="form-check-input" type="radio" name="rating" value="good" [(ngModel)]=Feedback.rating>
+        <b style="color:rgb(228, 171, 65)"> Good </b>
+      </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <label class="form-check-label">
+        <input class="form-check-input" type="radio" name="rating" value="average" [(ngModel)]=Feedback.rating>
+        <b style="color:rgb(228, 171, 65)"> Average </b>
+      </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <label class="form-check-label">
+        <input class="form-check-input" type="radio" name="rating" value="bad" [(ngModel)]=Feedback.rating>
+        <b style="color:rgb(228, 171, 65)"> Bad </b>
+      </label>
+    </div>
+    <br>
+
+    <!-- comments field -->
+    <div class="form-group">
+      <label for="comments">
+        <b> Comments:</b>
+      </label>
+      <textarea class="form-control" type="textarea" name="comments" id="comments" placeholder="Your Comments" maxlength="6000"
+        rows="10" [(ngModel)]=Feedback.comments #cm="ngModel" required>
+                  </textarea>
+
+    </div>
+    <br>
+
+    <button (click)="createFeedBack()" type="submit" class="btn btn-primary btn-block" [disabled]="!form.valid">
+      <b>Submit</b>
+    </button>
+    <input class="btn btn-primary" action="action" onclick="window.history.go(-1); return false;" type="button" value="Back"
+    />
+  </form>
+</div>

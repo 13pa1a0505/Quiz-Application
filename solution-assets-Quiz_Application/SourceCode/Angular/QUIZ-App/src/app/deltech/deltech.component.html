@@ -1,0 +1,32 @@
+<div class="bgimg5">
+  <div class="col-md-10">
+    <h1>Delete User</h1>
+    <table class="table table-striped css-serial">
+      <thead>
+        <tr>
+          <th>T.No</th>
+          <th>TechId</th>
+          <th>Techname</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tech of technologies">
+          <td></td>
+          <td>
+            <input type="text" [(ngModel)]="tech.tid" #id readonly/>
+          </td>
+          <td>
+            <input type="text" [(ngModel)]="tech.tname" readonly/>
+          </td>
+          <td>
+            <button class="btn btn-danger" (click)="Del(id.value)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button class="btn btn-primary" action="action" onclick="window.history.go(-1); return false;">Back</button> &nbsp;&nbsp;
+
+  </div>
+</div>

@@ -1,0 +1,46 @@
+/* For font type and margin */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 40px; 
+  }
+  
+  /* For headings */
+  h1{
+    text-align: center;
+    margin-left: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    color:rgb(83, 19, 234);
+  }
+ /* Full-width input fields */
+ input[type=text],input[type=email], input[type=password],textarea{
+    width: 50%;
+    padding:10px;
+    margin: 10px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: hsl(204, 49%, 69%);
+  }
+  
+  form{
+    background:hsl(155, 26%, 91%);
+    
+    margin: 75px 450px 40px 420px;
+  }
+
+  
+  button {
+    
+    width: 100%;
+    background: hsl(204, 49%, 69%);
+    text-align: center;
+    padding: 14px 0;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 0px;
+    text-transform: capitalize;
+    border-bottom: 4px solid #CA6106;
+  }
+  

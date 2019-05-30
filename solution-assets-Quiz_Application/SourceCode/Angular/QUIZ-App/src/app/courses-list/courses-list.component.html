@@ -1,0 +1,42 @@
+<app-userprofile></app-userprofile>
+<div class="bgimg">
+
+    <div class="col-md-20">
+        <table id="customers"  class="css-serial">
+            <thead>
+                <tr>
+                    <th>T.No</th>
+                    <th>TechId</th>
+                    <th>Techname</th>
+                    <th>Levels</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tech of technologies">
+                    <td></td>
+                    <td>
+                        <input type="text" [(ngModel)]="tech.tid" #id readonly/>
+                    </td>
+                    <td>
+                        <input type="text" [(ngModel)]="tech.tname" readonly/>
+                    </td>
+                    <td>
+                        <select class="form-control" name="level" id="levelname" #level>
+                            <option value="0">Select Level</option>
+                            <option value=101>Basic</option>
+                            <option value=102>Moderate</option>
+                            <option value=103>Advanced</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" (click)="get(id.value,level.value)" [routerLink]="['/ins']">TakeTest</button>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+            <input class="btn btn-primary" action="action" onclick="window.history.go(-1); return false;" type="button" value="Back"
+            />
+    </div>
+
+</div>

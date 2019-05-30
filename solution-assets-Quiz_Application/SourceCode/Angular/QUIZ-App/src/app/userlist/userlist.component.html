@@ -1,0 +1,33 @@
+<app-adminprofile>
+</app-adminprofile>
+<div class="bgimg">
+  <div class="col-md-20">
+    <table id="customers" class="table table-striped css-serial">
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>UserId</th>
+          <th>Username</th>
+          <th>password</th>
+          <th>Email</th>
+          <th>ContactNo</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td></td>
+          <td>{{user.uid}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.password}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.contactno}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <input class="btn btn-primary" action="action" onclick="window.history.go(-1); return false;" type="button" value="Back"
+  />
+</div>

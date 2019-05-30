@@ -1,0 +1,166 @@
+<div class="bgimg6 ">
+  <div class=" col-md-7">
+    <form #form="ngForm" (ng-submit)="submit(form)" autocomplete="off">
+      <div class="mystyles-display-center">
+        <h1 style="margin: auto; width: 80%" class=" mystyles-animate-top mystyles-text-blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <b>Register A New User</b>
+        </h1>
+        <hr class="mystyles-border-green " style="margin: auto; width: 40%">
+      </div>
+
+      <!-- For First Name -->
+      <div class="form-group">
+        <label class="mystyles-text-black" for="firstName">First Name:
+          <span style="color: red;">*</span>
+        </label>
+        <input [(ngModel)]="user.firstName" placeholder="Enter First Name" name="firstName" class="form-control" id="firstName" required
+          #fn="ngModel">
+        <label class="text-danger" *ngIf="fn.touched && (fn.pristine || fn.value=='')">
+          <b> First Name Required </b>
+        </label>
+        <label class="text-danger" *ngIf="fn.invalid && fn.dirty && fn.value!=''">
+          <b> Please Enter a Valid Name</b>
+        </label>
+      </div>
+
+      <!-- For Middle Name -->
+      <div class="form-group">
+        <label class="mystyles-text-black" for="middleName">Middle Name: </label>
+        <input [(ngModel)]="user.middleName" placeholder="Enter Middle Name" name="middleName" class="form-control" id="middleName"
+          #fnsd="ngModel">
+      </div>
+
+      <!-- For Last Name -->
+
+      <div class="form-group">
+        <label class="mystyles-text-black" for="lastName">Last Name:
+          <span style="color: red;">*</span>
+        </label>
+        <input [(ngModel)]="user.lastName" placeholder="Enter Last Name" name="lastName" class="form-control" id="lastName" required
+          #fls="ngModel">
+        <label class="text-danger" *ngIf="fls.touched && (fls.pristine || fls.value=='')">
+          <b> Last Name Required </b>
+        </label>
+        <label class="text-danger" *ngIf="fls.invalid && fls.dirty && fls.value!=''">
+          <b> Please Enter a Valid Name</b>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="mystyles-text-black" for="username">USERNAME:</label>
+        <input [(ngModel)]="user.username" placeholder="username" name="username" class="form-control" id="username" required #fu="ngModel"
+           pattern="^[a-zA-Z]+( [a-zA-Z]+)*$">
+        <label class="text-danger" *ngIf="fu.touched && (fu.pristine || fu.value=='')">
+          <b>Name required </b>
+        </label>
+        <label class="text-danger" *ngIf="fu.invalid && fu.dirty && fu.value!=''">
+          <b> username should be a text</b>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="mystyles-text-black" for="email">EMAIL:</label>
+        <input [(ngModel)]="user.email" placeholder="email" name="email" class="form-control" id="email" required #fn1="ngModel"
+           pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$">
+        <label class="text-danger" *ngIf="fn1.touched && (fn1.pristine || fn1.value=='')">
+          <b>Email required </b>
+        </label>
+        <label class="text-danger" *ngIf="fn1.invalid && fn1.dirty && fn1.value!=''">
+          <b> Enter valid Email ex:xyz.abc@qwe.com</b>
+        </label>
+      </div>
+
+
+
+      <div class="form-group">
+        <label class="mystyles-text-black" for="contactno">CONTACT NO:</label>
+        <input [(ngModel)]="user.contactno" placeholder="contactno" name="contactno" class="form-control" id="contactno" required
+          #fn2="ngModel" pattern="\d{10}">
+        <label class="text-danger" *ngIf="fn2.touched && (fn2.pristine || fn2.value=='')">
+          <b>Contact no required </b>
+        </label>
+        <label class="text-danger" *ngIf="fn2.invalid && fn2.dirty && fn2.value!=''">
+          <b> contactno should be 10 digit valid number</b>
+        </label>
+      </div>
+
+      <!-- For Date of Birth  -->
+      <div class="form-group">
+        <label class="mystyles-text-black" for="dateOfBirth">Date of Birth:
+          <span style="color: red;">*</span>
+        </label>
+        <input type='date' [(ngModel)]="user.dateOfBirth" name="dateOfBirth" class="form-control" id="dateOfBirth" required #fnf="ngModel">
+        <label class="text-danger" *ngIf="fnf.touched && (fnf.pristine || fnf.value=='')">
+          <b> Date of Birth Required </b>
+        </label>
+        <label class="text-danger" *ngIf="fnf.invalid && fnf.dirty && fnf.value!=''">
+          <b> Please Enter Birth Required</b>
+        </label>
+      </div>
+
+
+
+
+<!-- For Gender -->
+<div class="form-group">
+  <label class="mystyles-text-black" for="gender">Gender:
+    <span style="color: red;">*</span>
+  </label>
+  <select  class="form-control" [(ngModel)]="registrationList.gender" name="gender" id="gender" 
+  #gen="ngModel" required>
+    <option *ngFor="let regtech of registrationList"  [ngValue]="regtech.gender">{{regtech.gender}}</option>
+  </select>
+</div>
+
+<!-- For Security Question -->
+<div class="form-group">
+  <label class="mystyles-text-black" for="securityQuestion">Security Question:
+    <span style="color: red;">*</span>
+  </label>
+  <select class="form-control" [(ngModel)]="registrationList.squestion" name="securityQuestion" id="securityQuestion" 
+  #sq="ngModel" required>
+      <option *ngFor="let regtech of registrationList"  [ngValue]="regtech.squestion">{{regtech.squestion}}</option>
+  </select>
+</div>
+
+<!-- For Secret Answer -->
+<div class="form-group">
+  <label class="mystyles-text-black" for="secretAnswer">Secret Answer:
+    <span style="color: red;">*</span>
+  </label>
+  <input [(ngModel)]="user.secretAnswer" placeholder="Enter Secret Answer" name="secretAnswer" class="form-control" id="secretAnswer"
+    required #fne="ngModel">
+  <label class="text-danger" *ngIf="fne.touched && (fne.pristine || fne.value=='')">
+    <b> Secret Answer Required</b>
+  </label>
+  <label class="text-danger" *ngIf="fne.invalid && fne.dirty && fne.value!=''">
+    <b> Please Enter a Secret Answer</b>
+  </label>
+</div>
+
+<!-- For Address -->
+<div class="form-group">
+  <label class="mystyles-text-black" for="address">Address : </label>
+  <input [(ngModel)]="user.address" placeholder="Enter Address" name="address" class="form-control" id="address" #fnse="ngModel">
+</div>
+
+
+<div class="form-group">
+  <label class="mystyles-text-black" for="password">PASSWORD</label>
+  <input [(ngModel)]="user.password" placeholder="password" name="password" class="form-control" id="password" required #fns="ngModel"
+    maxlength="8" ngModel passwordToggle required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+  <label class="text-danger" *ngIf="fns.touched && (fns.pristine || fns.value=='')">
+    <b> Password required </b>
+  </label>
+  <label class="text-danger" *ngIf="fns.invalid && fns.dirty && fns.value!=''">
+    <b> Must contain at least one number and one uppercase and lowercase letter with a special character, and at least 8 or more
+      characters. </b>
+  </label>
+</div>
+
+<button class="btn btn-success" (click)="createUser(gen.value,sq.value)" [disabled]="!form.valid">Register</button>&nbsp;&nbsp;&nbsp;
+
+<a class="btn btn-primary" [routerLink]="['']" type="button">Home</a>
+</form>
+</div>
+</div>
